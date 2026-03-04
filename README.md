@@ -311,6 +311,6 @@ mycli fileinfo package.json
 
 # Author
 
-**Siddharth Shukla**
+**Siddharth Kumar Shukla**
 
 SESD Workshop – CLI Tool Project
