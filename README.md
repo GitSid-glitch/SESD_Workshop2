@@ -64,7 +64,7 @@ npm init -y
 ### 2. Install dependencies
 
 ```bash
-npm install commander
+npm install commander chalk
 ```
 
 Install development dependencies:
@@ -299,6 +299,110 @@ mycli fileinfo package.json
 ```
 
 ---
+
+## ✨ Bonus Features
+
+The CLI includes several additional features to improve usability and functionality.
+
+---
+
+### Colored CLI Output
+
+The CLI uses **chalk** to display colored output in the terminal for better readability.
+
+Example:
+
+```
+mycli greet Siddharth
+```
+
+Output:
+
+```
+Hello Siddharth
+```
+
+---
+
+### Command Help Descriptions
+
+Each command includes a description that appears when running the help command.
+
+Run:
+
+```
+mycli --help
+```
+
+Example output:
+
+```
+Usage: mycli [options] [command]
+
+Options:
+  -V, --version  output the version number
+  -h, --help     display help for command
+
+Commands:
+  greet <name>        Greets a user
+  add <a> <b>         Adds two numbers
+  subtract <a> <b>    Subtracts two numbers
+  multiply <a> <b>    Multiplies two numbers
+  divide <a> <b>      Divides two numbers
+  joke                Fetch a random joke
+  quote               Get a motivational quote
+  github <username>   Get GitHub user information
+  weather <city>      Get weather information for a city
+  advice              Get random advice
+```
+
+---
+
+### Version Command
+
+The CLI includes a version flag to display the current version.
+
+```
+mycli --version
+```
+
+Example output:
+
+```
+1.0.0
+```
+
+---
+
+### Command Flags / Options
+
+Some commands support additional flags.
+
+Example:
+
+```
+mycli advice --uppercase
+```
+
+This prints the advice text in uppercase.
+
+---
+
+### Input Validation
+
+Commands validate input to prevent invalid operations.
+
+Example:
+
+```
+mycli divide 10 0
+```
+
+Output:
+
+```
+Error: Cannot divide by zero
+```
 
 # Technologies Used
 
