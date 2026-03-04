@@ -30,3 +30,4 @@ class MultiplyCommand {
 }
 
 module.exports = MultiplyCommand
+export {}

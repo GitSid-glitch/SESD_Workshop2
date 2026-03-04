@@ -30,3 +30,4 @@ class SubtractCommand {
 }
 
 module.exports = SubtractCommand
+export {}

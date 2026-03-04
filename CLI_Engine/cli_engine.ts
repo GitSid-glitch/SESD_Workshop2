@@ -6,7 +6,7 @@ class CLIEngine{
         this.program = new Command();   
     }
 
-    resisterCommands(commands){
+    registerCommands(commands){
         commands.forEach((commandClass) =>{
             const commandInstance = new commandClass(this.program)
             commandInstance.register();

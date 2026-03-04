@@ -18,3 +18,4 @@ class GreetCommand{
 }
 
 module.exports = GreetCommand
+export {}

@@ -24,3 +24,4 @@ class AddCommand{
 }
 
 module.exports = AddCommand
+export {}

@@ -38,3 +38,4 @@ class DivideCommand {
 }
 
 module.exports = DivideCommand
+export {}
