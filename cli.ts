@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const cli_engine = require("./CLI_Engine/cli_engine")
 
-const greet_command = require("./commands/greet_command").default
+const greet_command = require("./commands/greet_command")
 const AddCommand = require("./commands/add_command")
 const SubtractCommand = require("./commands/subtract_command")
 const MultiplyCommand = require("./commands/multiply_command")
