@@ -30,6 +30,4 @@ class GithubCommand{
     }
 
 }
-
-module.exports = GithubCommand
-export {}
+export default GithubCommand

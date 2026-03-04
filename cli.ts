@@ -1,31 +1,33 @@
 #!/usr/bin/env node
-const cli_engine = require("./CLI_Engine/cli_engine")
+import CLIEngine from "./CLI_Engine/cli_engine"
 
-const greet_command = require("./commands/greet_command")
-const AddCommand = require("./commands/add_command")
-const SubtractCommand = require("./commands/subtract_command")
-const MultiplyCommand = require("./commands/multiply_command")
-const DivideCommand = require("./commands/divide_command")
 
-const JokeCommand = require("./commands/joke_command")
-const QuoteCommand = require("./commands/quote_command")
-const WeatherCommand = require("./commands/weather_command")
-const GithubCommand = require("./commands/github_command")
+import GreetCommand from "./commands/greet_command"
+import AddCommand from "./commands/add_command"
+import SubtractCommand from "./commands/subtract_command"
+import MultiplyCommand from "./commands/multiply_command"
+import DivideCommand from "./commands/divide_command"
 
-const FileInfoCommand = require("./commands/fileinfo_command")
-const InitTSCommand = require("./commands/init_ts")
+import JokeCommand from "./commands/joke_command"
+import QuoteCommand from "./commands/quote_command"
+import AdviceCommand from "./commands/advice_command"
 
-const engine = new cli_engine()
+import GithubCommand from "./commands/github_command"
+
+import FileInfoCommand from "./commands/fileinfo_command"
+import InitTSCommand from "./commands/init_ts"
+
+const engine = new CLIEngine()
 
 engine.registerCommands([
-    greet_command,
+    GreetCommand,
     AddCommand,
     SubtractCommand,
     MultiplyCommand,
     DivideCommand,
     JokeCommand,
     QuoteCommand,
-    WeatherCommand,
+    AdviceCommand,
     GithubCommand,
     FileInfoCommand,
     InitTSCommand

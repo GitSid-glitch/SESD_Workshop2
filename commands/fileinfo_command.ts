@@ -1,3 +1,5 @@
+import { fileURLToPath } from "url"
+
 const fs = require("fs")
 
 class FileInfoCommand{
@@ -27,5 +29,4 @@ class FileInfoCommand{
 
 }
 
-module.exports = FileInfoCommand
-export {}
+export default FileInfoCommand

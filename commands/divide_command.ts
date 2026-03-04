@@ -37,5 +37,4 @@ class DivideCommand {
 
 }
 
-module.exports = DivideCommand
-export {}
+export default DivideCommand

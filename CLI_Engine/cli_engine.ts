@@ -1,4 +1,4 @@
-const {Command} = require('commander');
+import { Command } from "commander"
 
 class CLIEngine{
     program
@@ -19,4 +19,4 @@ class CLIEngine{
 
 }
 
-module.exports = CLIEngine
+export default CLIEngine    

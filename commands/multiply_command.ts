@@ -29,5 +29,4 @@ class MultiplyCommand {
 
 }
 
-module.exports = MultiplyCommand
-export {}
+export default MultiplyCommand

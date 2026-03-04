@@ -15,5 +15,4 @@ class JokeService {
 }
 
 module.exports = JokeService
-
 export {}

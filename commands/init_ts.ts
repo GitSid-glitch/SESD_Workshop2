@@ -29,3 +29,6 @@ class Init_TS{
         execSync(command, {stdio: "inherit"})
     }
 }
+
+
+export default Init_TS

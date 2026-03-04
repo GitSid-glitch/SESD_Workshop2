@@ -29,5 +29,4 @@ class SubtractCommand {
 
 }
 
-module.exports = SubtractCommand
-export {}
+export default SubtractCommand

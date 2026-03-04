@@ -23,5 +23,4 @@ class AddCommand{
 
 }
 
-module.exports = AddCommand
-export {}
+export default AddCommand

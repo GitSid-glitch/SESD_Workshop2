@@ -30,5 +30,4 @@ class QuoteCommand{
 
 }
 
-module.exports = QuoteCommand
-export {}
+export default QuoteCommand

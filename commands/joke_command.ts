@@ -30,6 +30,4 @@ class JokeCommand {
 
 }
 
-module.exports = JokeCommand
-
-export {}
+export default JokeCommand
