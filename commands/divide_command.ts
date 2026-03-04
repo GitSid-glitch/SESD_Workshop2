@@ -1,3 +1,4 @@
+const chalk = require("chalk").default
 class DivideCommand {
 
     program
@@ -25,7 +26,7 @@ class DivideCommand {
         const numB = Number(b)
 
         if(numB === 0){
-            console.log("Cannot divide by zero")
+            console.log(chalk.red("Cannot divide by zero"))
             return
         }
 

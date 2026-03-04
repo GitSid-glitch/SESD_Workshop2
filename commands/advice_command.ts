@@ -17,12 +17,19 @@ class AdviceCommand{
         this.program
         .command("advice")
         .description("Get random advice")
-        .action(async ()=>{
+        .option("-u, --uppercase", "Print name in uppercase")
+        .action(async (options) => {
 
             const data = await this.adviceService.getAdvice()
-
-            console.log(data.slip.advice)
-
+    
+            let advice = data.slip.advice
+    
+            if (options.uppercase) {
+                advice = advice.toUpperCase()
+            }
+    
+            console.log(advice)
+    
         })
 
     }

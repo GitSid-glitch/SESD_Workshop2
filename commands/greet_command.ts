@@ -1,3 +1,4 @@
+const chalk = require("chalk").default
 class GreetCommand{
     program;
 
@@ -13,7 +14,7 @@ class GreetCommand{
     }
 
     greetName(name){
-        console.log(`Hello ${name}`)
+        console.log(chalk.green(`Hello ${name}`))
     }
 }
 

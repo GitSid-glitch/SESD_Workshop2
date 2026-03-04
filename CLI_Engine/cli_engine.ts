@@ -3,7 +3,11 @@ import { Command } from "commander"
 class CLIEngine{
     program
     constructor(){
-        this.program = new Command();   
+        this.program = new Command();  
+        this.program
+            .name("mycli")
+            .description("Custom CLI Tool built with Node + TypeScript")
+            .version("1.0.0") 
     }
 
     registerCommands(commands){
