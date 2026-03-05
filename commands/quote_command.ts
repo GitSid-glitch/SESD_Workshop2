@@ -18,11 +18,14 @@ class QuoteCommand{
         .command("quote")
         .description("Get motivational quote")
         .action(async ()=>{
+            try{
+                const quote = await this.quoteService.getQuote()
 
-            const quote = await this.quoteService.getQuote()
-
-            console.log(`"${quote.content}"`)
-            console.log(`— ${quote.author}`)
+                console.log(`"${quote.content}"`)
+                console.log(`— ${quote.author}`)
+            }catch(error){
+                console.log("Could not fetch a quote right now")
+            }
 
         })
 

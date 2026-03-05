@@ -25,6 +25,11 @@ class DivideCommand {
         const numA = Number(a)
         const numB = Number(b)
 
+        if(Number.isNaN(numA) || Number.isNaN(numB)){
+            console.log(chalk.red("Please provide valid numbers"))
+            return
+        }
+
         if(numB === 0){
             console.log(chalk.red("Cannot divide by zero"))
             return

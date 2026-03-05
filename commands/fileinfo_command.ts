@@ -1,5 +1,3 @@
-import { fileURLToPath } from "url"
-
 const fs = require("fs")
 
 class FileInfoCommand{
@@ -16,12 +14,15 @@ class FileInfoCommand{
         .command("fileinfo <filename>")
         .description("Get file info")
         .action((filename)=>{
+            try{
+                const stats = fs.statSync(filename)
 
-            const stats = fs.statSync(filename)
-
-            console.log("Size:", stats.size)
-            console.log("Created:", stats.birthtime)
-            console.log("Modified:", stats.mtime)
+                console.log("Size:", stats.size)
+                console.log("Created:", stats.birthtime)
+                console.log("Modified:", stats.mtime)
+            }catch(error){
+                console.log(`Could not read file: ${filename}`)
+            }
 
         })
 

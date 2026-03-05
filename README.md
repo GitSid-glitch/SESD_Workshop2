@@ -294,7 +294,7 @@ mycli add 5 10
 mycli joke
 mycli quote
 mycli github torvalds
-mycli weather Delhi
+mycli advice --uppercase
 mycli fileinfo package.json
 ```
 

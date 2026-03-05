@@ -12,12 +12,25 @@ class AddCommand{
         .command("add <a> <b>")
         .description("Add two numbers")
         .action((a,b)=>{
-
-            const result = Number(a) + Number(b)
-
-            console.log("Result:", result)
+            this.addNumbers(a, b)
 
         })
+
+    }
+
+    addNumbers(a, b){
+
+        const numA = Number(a)
+        const numB = Number(b)
+
+        if(Number.isNaN(numA) || Number.isNaN(numB)){
+            console.log("Please provide valid numbers")
+            return
+        }
+
+        const result = numA + numB
+
+        console.log("Result:", result)
 
     }
 

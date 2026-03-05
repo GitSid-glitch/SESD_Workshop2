@@ -21,7 +21,15 @@ class SubtractCommand {
 
     subtractNumbers(a, b){
 
-        const result = Number(a) - Number(b)
+        const numA = Number(a)
+        const numB = Number(b)
+
+        if(Number.isNaN(numA) || Number.isNaN(numB)){
+            console.log("Please provide valid numbers")
+            return
+        }
+
+        const result = numA - numB
 
         console.log("Result:", result)
 

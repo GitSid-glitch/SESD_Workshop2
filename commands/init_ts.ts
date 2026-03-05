@@ -1,4 +1,6 @@
 const {execSync} = require("child_process")
+const fs = require("fs")
+const path = require("path")
 
 class Init_TS{
     program
@@ -10,23 +12,47 @@ class Init_TS{
     register(){
         this.program
         .command("init-ts <foldername>")
+        .description("Create a new TypeScript starter project")
         .action((foldername) => {
             this.InitializeTS(foldername)
         })
     }
 
     InitializeTS(foldername){
-        this.run(`mkdir ${foldername}`)
-        this.run(`cd ${foldername} && npm init -y`)
-        this.run(`cd ${foldername} && npm install -D typescript ts-node nodemon`)
-        this.run(`cd ${foldername} && npx tsc --init`)
-        this.run(`cd ${foldername} && touch index.ts`)
+        if(!this.isValidFolderName(foldername)){
+            console.log("Please provide a valid folder name")
+            return
+        }
 
+        const targetPath = path.resolve(foldername)
 
+        if(fs.existsSync(targetPath)){
+            console.log("That folder already exists")
+            return
+        }
+
+        try{
+            fs.mkdirSync(targetPath)
+            this.run("npm init -y", targetPath)
+            this.run("npm install -D typescript ts-node nodemon", targetPath)
+            this.run("npx tsc --init", targetPath)
+            fs.writeFileSync(path.join(targetPath, "index.ts"), "")
+            console.log(`TypeScript project created in ${foldername}`)
+        }catch(error){
+            console.log("Failed to initialize TypeScript project")
+        }
     }
 
-    run(command){
-        execSync(command, {stdio: "inherit"})
+    isValidFolderName(foldername){
+        if(!foldername || typeof foldername !== "string"){
+            return false
+        }
+
+        return /^[a-zA-Z0-9._-]+$/.test(foldername)
+    }
+
+    run(command, cwd){
+        execSync(command, {stdio: "inherit", cwd})
     }
 }
 

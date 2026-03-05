@@ -8,6 +8,7 @@ class GreetCommand{
 
     register(){
         this.program.command("greet <name>")
+        .description("Greet a user by name")
         .action((name) => {
             this.greetName(name)
         })

@@ -18,11 +18,14 @@ class JokeCommand {
         .command("joke")
         .description("Get a random joke")
         .action(async ()=>{
+            try{
+                const joke = await this.jokeService.getJoke()
 
-            const joke = await this.jokeService.getJoke()
-
-            console.log(joke.setup)
-            console.log(joke.punchline)
+                console.log(joke.setup)
+                console.log(joke.punchline)
+            }catch(error){
+                console.log("Could not fetch a joke right now")
+            }
 
         })
 
